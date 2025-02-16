@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Your Choice</title>
+    <style>
+        ::placeholder {
+            color: #999;
+        }
+        body { 
+            background-color: #a8afae; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 10px; 
+            direction: rtl;
+        }
+        button { 
+            background: blue; 
+            color: white; 
+            padding: 10px; 
+            border: none; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 10px;
+        }
+        button:hover { 
+            background: darkblue; 
+        }
+        .label { 
+            font-weight: bold; 
+            display: block; 
+            margin: 5px 0; 
+        }
+    </style>
+    <script>
+        function searchItem() {
+            const availableItems = ['Item1', 'Item2', 'Item3']; 
+            const userInput = document.getElementById('searchInput').value.trim();
+
+            if (availableItems.includes(userInput)) {
+                window.location.href = 'nextPage.html'; 
+            } else {
+                alert('This item is not available');
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="images/logo.png" width="300" height="200" alt="RM Leather Show Logo">
+    <p id="message">Welcome to our RM Leather Show <br> আরএম লেদার শো-তে আপনাকে স্বাগতম</p>
+
+    <div>
+        <label class="label" for="searchInput">Search your item</label>
+        <input type="text" id="searchInput" placeholder="Write here" required>
+        <button onclick="searchItem()">Search</button>
+    </div>
+</body>
+</html>
